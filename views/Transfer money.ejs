@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html class="browser-login" lang="en">
+<!-- COMMON INCLUDES -->
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<title>Transfer Money - Independent Bank</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=2">
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320">
+	<meta http-equiv="cleartype" content="on">
+	<!-- For iOS web apps. Delete if not needed. https://github.com/h5bp/mobile-boilerplate/issues/94-->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-title" content="Independent Bank">
+	<!-- <meta name="apple-mobile-web-app-status-bar-style" content="black">-->
+	<!-- This script prevents links from opening in Mobile Safari. https://gist.github.com/1042026-->
+
+	<script async="" src="adrum-ext.js"></script>
+
+	<meta name="KONICHIWA8" content="accounts01">
+	<meta name="KONICHIWA9" content="true">
+	<!-- ISG08491471  -->
+	<meta name="format-detection" content="telephone=no">
+
+	<script type="text/javascript" nonce="6fa10a95-0149-4b44-bf14-dad43ef73bc8">
+		if (self === top) {
+			var antiClickjack = document.getElementById("antiClickjack");
+			antiClickjack.parentNode.removeChild(antiClickjack);
+		} else {
+			top.location = self.location;
+		}
+	</script>
+	<!-- App Dynamics Performance Monitoring -->
+	<!-- <script nonce="6fa10a95-0149-4b44-bf14-dad43ef73bc8">
+		(function(){
+		    window['adrum-start-time'] = new Date().getTime();
+		    var userInfo = {
+		      wfacookie: "11202008162137272025061487",
+		      CustomerSegment: "COB"
+		    };
+		    var pageView = {
+	  	      userData: userInfo
+	  	    };
+		    function getMeta(metaName) {
+		      var metas = document.getElementsByTagName('meta');
+		      var noOFMetas = metas.length;
+		      var meta;
+		      for (var i = 0; i < noOFMetas; i++) {
+		        meta = metas[i];
+		        if (meta.hasAttribute('name') && meta.getAttribute('name') === metaName) {
+		          return meta.getAttribute('content');
+		        }
+		      }
+		    return '';
+		    }
+		    if(getMeta('KONICHIWA9') === 'true'){
+		    	pageView.userPageName = window.location.pathname + '-Tempest';
+		    }
+		    window['adrum-config'] = {
+		      userEventInfo: {
+		        "PageView": function (context) {
+		        	return pageView;
+		        }
+		      }
+		    };
+		    (function (config) {
+		      config.appKey = "EUM-AAB-AWG";
+		      config.adrumExtUrlHttp = '/accounts/static/webassets/20.08.01.2/7P/accounts/js';
+		      config.adrumExtUrlHttps = '/accounts/static/webassets/20.08.01.2/7P/accounts/js';
+		      config.beaconUrlHttps = "https://digital-eum-appdynamics.wellsfargo.com:443";
+		      config.xd = {enable: false};
+		      config.xhr = {
+		        "exclude": {
+		          "urls": [
+		            {pattern: '.*/support/.*'},
+		            {pattern: '.*/fragments/.*'},
+		            {pattern: '.*/presentedDisposition/.*'},
+		            {pattern: '.*/bev/.*'},
+		            {pattern: '.*/glassbox/.*'}
+		          ]
+		        }
+		      };
+		    })(window['adrum-config'] || (window['adrum-config'] = {}));
+		  })();
+		</script> -->
+	<script src="adrum-ext_002.js" nonce="6fa10a95-0149-4b44-bf14-dad43ef73bc8"></script>
+	<!-- TOP Level CSS Includes - Don't change the sequence of below CSS includes  -->
+	<link rel="stylesheet" media="screen" href="mwf-accounts-combined-mm.css">
+	<link rel="stylesheet" media="print" href="mwf-accounts-combined-print.css">
+	<!-- endbuild-->
+
+	<!-- TOP Level JS Includes - These Js includes should be on TOP of the html page.   -->
+	<!-- All other JS dependencies will be at the bottom of the BODY section of the markup.-->
+
+	<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_"
+		data-requiremodule="mwf-core-ui-bootstrap" src="mwf-core-ui-bootstrap.js"></script>
+	<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_"
+		data-requiremodule="https://static.wellsfargo.com/tracking/m2/utag.js" src="utag_002.js"></script>
+	<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_"
+		data-requiremodule="mwf-accounts-ui-bootstrap" src="mwf-accounts-ui-bootstrap.js"></script>
+	<script type="text/javascript" async="" charset="utf-8" id="utag_wfc.m2_36" src="utag.js"></script>
+	<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_"
+		data-requiremodule="wf-tracking-accounts" src="wf-tracking-accounts.js"></script>
+</head>
+
+<body class="" data-page="summary" style="touch-action: auto;" data-user-language="en">
+	<p tabindex="-1" id="page-load-focus" class="visuallyhidden" data-accessibility-focus="">Account Summary </p>
+	<!-- HEADER -->
+	<div id="mwfAppContainer">
+		<%- include("./partials/innernav.ejs") %>
+		<main id="contentBody" class="page content-body row"
+			data-no-modal-vertical-adjust="data-no-modal-vertical-adjust" data-modal-visually-hide=""
+			style="touch-action: auto; margin-left: auto; top: 0px;">
+			<div class="control-bar row">
+				<div class="desktop-margin">
+					<div class="control-links column">
+						<a href="javascript: void(0);" data-display-type="saml" data-external-navigation=""
+							data-ajax-caller="getJSON"
+							data-url="/exit/saml;identifier=accounts?_x=i4w94UKeVwFAajXaoep1wfOS59FxpNbO"
+							class="nav-home">Transfer Money</a>
+					</div>
+					<div class="function-links column"><a href="javascript: void(0);" data-print-link=""
+							class="print-link" role="button" tabindex="0"><span class="mwf-icon"></span>Print</a></div>
+				</div>
+			</div>
+
+			<div class="mwf-core-background-image"
+				style="background: url(//www11.wellsfargomedia.com/transferandpay/static/assets/7P/assets/images/securesite/7P/payments/mm/images/lifestyle/bim-background_2560x1440.jpg);background-size:cover">
+			</div>
+			<div data-panel-container-main="" class="panel-container-main row fill-vertical" style="min-height: 140vh;">
+				<div data-panel="home-panel" data-show-right-rail="show" class="panel-content column"
+					aria-hidden="false">
+					<div data-fragment-name="mwf-selfpay-ui-home" class="home-panels payments-background-fill">
+						<div>
+							<p>There </p>
+							<p>There</p>
+							<p>therr</p>
+							<p>There </p>
+							<p style="color: white;">There</p>
+							<p style="color: white;">therr</p>
+						</div>
+					</div>
+				</div>
+				<div class="accounts column" style="touch-action: auto;">
+					<h1 class="visuallyhidden" tabindex="-1">Account Summary</h1>
+					<!-- Customer messages  -->
+					<div data-message-container="page" role="alert">
+						<ul class="message-list">
+							<li class="messaging message alert customer-level" data-emergency-msg="emergencyAlertMsg">
+								<div class="message-icon"> <i class="icon message-alert"></i><span
+										class="visuallyhidden">Alert</span></div>
+								<div class="cms-message-content">
+	
+									<p>Our phone and branch wait times may be longer than usual, but we're still here to
+										help you. Get updates on <a class="samloutbound"
+											data-url="/accounts/ia/processofferdestination;identifier=externalSite;?F=J&amp;destinationURL=https%3A%2F%2Fwww.wellsfargo.com%2Fjump%2Fenterprise%2Fcoronavirus-response%2F&amp;_x=sBEvUa0DLn5TlWHGsiMh0jSd0qsxOHKK"
+											tabindex="0" role="link"><span>COVID-19 support</span></a>.</p>
+	
+	
+	
+	
+								</div>
+							</li>
+	
+						</ul>
+					</div><!--  Summary Title and Accounts Tiles -->
+					<!--  CLL alignment code fix -->
+					
+					<!-- Account Tiles -->
+					<!-- Depending on the Summary Display Mode, Include the different fragments -->
+					<!-- Iterate Account Categories -->
+					<div class="summary-tile-view">
+						<!-- Iterate Views -->
+						<!-- Set Variables  To be used on Template -->
+						<div class="account-summary-tile row">
+							<div class="sub-component-group">
+								<div class="account-tile-header">
+									<a data-url="/accounts/inquiry/accountdetails/c70e922f-222f-42d9-8fb9-379401f521c3?F=M&amp;_eid=account_detail&amp;_aid=c70e922f-222f-42d9-8fb9-379401f521c3&amp;_x=6U-fP_5C0tjFXVd5pIEb5hU8b9sXOdzZ"
+										class="account-title-group column " tabindex="0" role="link">
+										<i class="icon acct-tile  checking"></i>
+										<span class="account-name OneLinkNoTx" lang="en">
+											TERM DEPOSIT</span>
+										<span class="masked-account-number has-wells-advisor">
+											<span class="OneLinkNoTx">...<%=`${user.accountNumber.toString().slice(-4) }`%></span>
+										</span>
+									</a>
+									<div class="balance-group-holder column">
+										<div class="account-balance-group">
+											<div class="account-balance  OneLinkNoTx">
+												<a tabindex="0"
+													data-url="/accounts/inquiry/accountdetails/c70e922f-222f-42d9-8fb9-379401f521c3?F=M&amp;_eid=account_detail&amp;_aid=c70e922f-222f-42d9-8fb9-379401f521c3&amp;_x=6U-fP_5C0tjFXVd5pIEb5hU8b9sXOdzZ"
+													class="" role="link">
+													<sup>$</sup>1200000.00</a>
+											</div>
+											<span class="balance-descriptor">
+												Available balance</span>
+										</div>
+									</div>
+	
+									<a data-content-id="hot-task-c70e922f-222f-42d9-8fb9-379401f521c3" role="button"
+										class="hot-task-menu account-info-hot-task hot-task-menu-init active-hot-task"
+										id="5J2IQUBI" style="touch-action: auto;" tabindex="0"
+										aria-label="Hot task menu - Opens dialog"></a>
+								</div>
+	
+								<!-- SubAccounts Link -->
+								<!-- Account Messages -->
+								<!-- Hot Tasks bar -->
+								<div data-content-id="hot-task-c70e922f-222f-42d9-8fb9-379401f521c3"
+									class="popover-content hot-task-content hot-task-menu hot-task-menu-init" id="Y1XNLZY8"
+									style="touch-action: auto;" tabindex="0" aria-label="Hot task menu - Opens dialog">
+									<ul class="task-list">
+										<li>
+											<a role="link"
+												data-url="/accounts/inquiry/accountdetails/c70e922f-222f-42d9-8fb9-379401f521c3?F=M&amp;accountId=c70e922f-222f-42d9-8fb9-379401f521c3&amp;_eid=viewactivity_hotlinks&amp;_x=Sc40yyuWjBSv4Kpj83oWXfAc4TbwCLXY"
+												tabindex="0" class="view-activity">
+												<span>View Activity</span>
+											</a>
+										</li>
+										<li>
+											<a role="link"
+												data-url="/accounts/exit/saml;identifier=transferMoney;destPageId=;_aid=c70e922f-222f-42d9-8fb9-379401f521c3;?F=J&amp;_eid=transfermoney_hotlinks&amp;_x=G7e7_gUSImc6c3RDg79daHibKGtIttWc"
+												tabindex="0" class="samloutbound transfer-money">
+												<span>Transfer Money</span>
+											</a>
+										</li>
+										<li>
+											<a role="link"
+												data-url="/accounts/exit/saml;identifier=sendMoney;destPageId=;accountId=c70e922f-222f-42d9-8fb9-379401f521c3;?F=J&amp;_eid=sendmoney_hotlinks&amp;_x=SlQV8wc9JH2Bsochn2l-DXySTedMpDU4"
+												tabindex="0" class="samloutbound send-money">
+												<span>Send Money</span>
+											</a>
+										</li>
+										<li>
+											<a role="link"
+												data-url="/accounts/exit/saml;identifier=edocsapp;edocsAppDestId=EDOCS_HUB_VIEW_STMT;accountId=c70e922f-222f-42d9-8fb9-379401f521c3?F=J&amp;_eid=viewstmtsonline_hotlinks&amp;_x=umC3r4pxbw1Age9R9II-il04lb3xucAS"
+												tabindex="0" class="samloutbound view-statements">
+												<span>View Statements</span>
+											</a>
+										</li>
+										<li>
+											<a role="link"
+												data-url="/accounts/exit/saml;identifier=messagecenter;accountId=c70e922f-222f-42d9-8fb9-379401f521c3?F=J&amp;_eid=alertCenter_hotlinks&amp;_x=zPJ8MM2lPOYq3Jq_ibi3JXibm5Pau8bM"
+												tabindex="0" class="samloutbound manage-alerts">
+												<span>Manage Alerts</span>
+											</a>
+										</li>
+									</ul>
+								</div>
+								<div class="dialog-content hidden">
+	
+								</div>
+								<!-- Feature Promotions bar -->
+							
+							</div>
+						</div>
+	
+						<!-- Remove Variables set previously to avoid the conflicts at other places on page. -->
+						<div id="Cash-account-group" class="category-group open">
+						</div>
+					</div>
+					<div class="summary-tile-view">
+						<!-- Iterate Views -->
+						<!-- Set Variables  To be used on Template -->
+						<div class="account-summary-tile row">
+							<div class="sub-component-group">
+								<div class="account-tile-header">
+									<a data-url="/accounts/inquiry/accountdetails/c70e922f-222f-42d9-8fb9-379401f521c3?F=M&amp;_eid=account_detail&amp;_aid=c70e922f-222f-42d9-8fb9-379401f521c3&amp;_x=6U-fP_5C0tjFXVd5pIEb5hU8b9sXOdzZ"
+										class="account-title-group column " tabindex="0" role="link">
+										<i class="icon acct-tile  checking"></i>
+										<span class="account-name OneLinkNoTx" lang="en">
+											EVERYDAY CHECKING</span>
+										<span class="masked-account-number has-wells-advisor">
+											<span class="OneLinkNoTx">...<%=`${user.accountNumber.toString().slice(-4) }`%></span>
+										</span>
+									</a>
+									<div class="balance-group-holder column">
+										<div class="account-balance-group">
+											<div class="account-balance  OneLinkNoTx">
+												<a tabindex="0"
+													data-url="/accounts/inquiry/accountdetails/c70e922f-222f-42d9-8fb9-379401f521c3?F=M&amp;_eid=account_detail&amp;_aid=c70e922f-222f-42d9-8fb9-379401f521c3&amp;_x=6U-fP_5C0tjFXVd5pIEb5hU8b9sXOdzZ"
+													class="" role="link">
+													<sup>$</sup><%=`${user.accountBalance}`%>.00</a>
+											</div>
+											<span class="balance-descriptor">
+												Available balance</span>
+										</div>
+									</div>
+	
+									<a data-content-id="hot-task-c70e922f-222f-42d9-8fb9-379401f521c3" role="button"
+										class="hot-task-menu account-info-hot-task hot-task-menu-init active-hot-task"
+										id="5J2IQUBI" style="touch-action: auto;" tabindex="0"
+										aria-label="Hot task menu - Opens dialog"></a>
+								</div>
+	
+								<!-- SubAccounts Link -->
+								<!-- Account Messages -->
+								<!-- Hot Tasks bar -->
+								<div data-content-id="hot-task-c70e922f-222f-42d9-8fb9-379401f521c3"
+									class="popover-content hot-task-content hot-task-menu hot-task-menu-init" id="Y1XNLZY8"
+									style="touch-action: auto;" tabindex="0" aria-label="Hot task menu - Opens dialog">
+									<ul class="task-list">
+										<li>
+											<a role="link"
+												data-url="/accounts/inquiry/accountdetails/c70e922f-222f-42d9-8fb9-379401f521c3?F=M&amp;accountId=c70e922f-222f-42d9-8fb9-379401f521c3&amp;_eid=viewactivity_hotlinks&amp;_x=Sc40yyuWjBSv4Kpj83oWXfAc4TbwCLXY"
+												tabindex="0" class="view-activity">
+												<span>View Activity</span>
+											</a>
+										</li>
+										<li>
+											<a role="link"
+												data-url="/accounts/exit/saml;identifier=transferMoney;destPageId=;_aid=c70e922f-222f-42d9-8fb9-379401f521c3;?F=J&amp;_eid=transfermoney_hotlinks&amp;_x=G7e7_gUSImc6c3RDg79daHibKGtIttWc"
+												tabindex="0" class="samloutbound transfer-money">
+												<span>Transfer Money</span>
+											</a>
+										</li>
+										<li>
+											<a role="link"
+												data-url="/accounts/exit/saml;identifier=sendMoney;destPageId=;accountId=c70e922f-222f-42d9-8fb9-379401f521c3;?F=J&amp;_eid=sendmoney_hotlinks&amp;_x=SlQV8wc9JH2Bsochn2l-DXySTedMpDU4"
+												tabindex="0" class="samloutbound send-money">
+												<span>Send Money</span>
+											</a>
+										</li>
+										<li>
+											<a role="link"
+												data-url="/accounts/exit/saml;identifier=edocsapp;edocsAppDestId=EDOCS_HUB_VIEW_STMT;accountId=c70e922f-222f-42d9-8fb9-379401f521c3?F=J&amp;_eid=viewstmtsonline_hotlinks&amp;_x=umC3r4pxbw1Age9R9II-il04lb3xucAS"
+												tabindex="0" class="samloutbound view-statements">
+												<span>View Statements</span>
+											</a>
+										</li>
+										<li>
+											<a role="link"
+												data-url="/accounts/exit/saml;identifier=messagecenter;accountId=c70e922f-222f-42d9-8fb9-379401f521c3?F=J&amp;_eid=alertCenter_hotlinks&amp;_x=zPJ8MM2lPOYq3Jq_ibi3JXibm5Pau8bM"
+												tabindex="0" class="samloutbound manage-alerts">
+												<span>Manage Alerts</span>
+											</a>
+										</li>
+									</ul>
+								</div>
+								<div class="dialog-content hidden">
+	
+								</div>
+								<!-- Feature Promotions bar -->
+								<div class="feature-promotions open">
+									<ul class="row OneLinkNoTx">
+										<li class="column" data-offer-disposition-id="f5bd6570-dcf9-4faf-8bc3-898ee4dce793"
+											style="touch-action: auto;">
+											<div class="iaRendered" data-slot-id="AS_PROMO"
+												data-offer-id="C_sav_way2save_promo" lang="en"><a class="samloutbound"
+													data-url="/accounts/exit/saml;identifier=WWWOffers;?F=J&amp;destinationURL=%2Fsavings-cds%2Fway2save%2F&amp;trackingId=slot-id%3DAS_PROMO%2Coffer-id%3DC_sav_way2save_promo&amp;_x=sNi0tI8xVSW_PtIW0HXRtpbDE6dzmeWk"
+													style="touch-action: auto;" tabindex="0" role="link">
+	
+	
+													<span class="icon feature-promo">
+														<img alt=""
+															src="wfi000_ic_b-piggy-bank-fill.svg">
+													</span>
+	
+													<span>Open an Indiesave savings today</span>
+	
+												</a></div>
+										</li>
+										<li class="column" data-offer-disposition-id="63cdb5bb-21ca-470a-8163-a4e5e2f4d0d8"
+											style="touch-action: auto;">
+											<div class="iaRendered" data-slot-id="AS_PROMO"
+												data-offer-id="C_ccd_berry_promo" lang="en"><a
+													data-tracking-id="28579-210515-3408-88" data-url.type="SAML_ONLY"
+													class="samloutbound"
+													data-url="/accounts/exit/saml;identifier=OSMPOffers;?F=J&amp;destinationURL=%2Folb-wib-OspOffer&amp;trackingId=slot-id%3DAS_PROMO%2Coffer-id%3DC_ccd_berry_promo&amp;_x=yqeFzExl9KXBpGJGC5aDW0F3sCVi0rqV"
+													style="touch-action: auto;" tabindex="0" role="link">
+	
+	
+													<span class="icon feature-promo">
+														<img alt=""
+															src="wfi000_ic_d-creditcardemv-propel-fill_src.svg">
+													</span>
+	
+													<span>Earn 20,000 bonus points</span>
+	
+												</a></div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+	
+						<!-- Remove Variables set previously to avoid the conflicts at other places on page. -->
+						<div id="Cash-account-group" class="category-group open">
+						</div>
+					</div>
+					<!-- End Expand Collapse for Commercial Lines And Loans -->
+					<!-- View list popover  for Views-->
+
+				</div>
+				<div id="rightRail" class="mwf-right-rail sidebar column" style="touch-action: auto; width: 100%;">
+					<div class="mwf-expand-collapse"></div>
+					<div>
+						<div data-make-transfer-header="data-make-transfer-header">
+							<div id="otpFailureModal" class="modal col-12" style="display: none;
+                            position: absolute;
+                            top: 500px;
+                            z-index: 2000;
+                            left: 0;
+                            top: 0;
+                            width: 100%;
+                            height: 100%;
+                            overflow: hidden;
+                            background-color: rgba(0, 0, 0, 0);">
+								<div class="modal-content" style="
+                                background-color: #f4f4f4;
+                                margin: 30% auto;
+                                padding: 20px;
+                                max-width: 80%;
+                                overflow: auto;
+                                box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.5), 0 7px 20px 0 rgba(0, 0, 0, 0.17);">
+									<span class="closeBtn" id="closeBtnOtp" style=" cursor: pointer;
+                                    color: rgba(255, 127, 80, 0.8);
+                                    float: right;
+                                    font-size: 30px;">&times;</span>
+									<h5 style="color: red;">Incorrect OTP</h5>
+									<p style="color: black;">You have used an incorrect OTP. Please try again</p>
+								</div>
+							</div>
+							<div id="otpModal" class="modal col-6" style="display: none;
+					position: absolute;
+					top: -500px;
+					z-index: 2000;
+					left: 0;
+					top: 0;
+					width: 100%;
+					height: 60%;
+					overflow: hidden;
+					margin: auto;
+					background-color: rgba(0, 0, 0, 0);">
+						<div class="modal-content" style="
+						background-color: #f4f4f4;
+						margin: 20% auto;
+						padding: 20px;
+						max-width: 80%;
+						height: 100%;
+						overflow: auto;
+						box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.5), 0 7px 20px 0 rgba(0, 0, 0, 0.17);">
+									<form id="otpForm" >
+										<h3 style="color: black;">Please enter the six digit otp sent to your mail</h3>
+										<input type="text" name="otp" id="otpInput" style="max-width: 80%;">
+										<input type="submit" value="Submit" class="btn" style="background-color: rgba(0, 0, 0, 0.6); color: #f4f4f4;">
+									</form>
+								</div>
+							</div>
+							<div id="successModal" class="modal col-12" style="display: none;
+                            position: absolute;
+                            top: 500px;
+                            z-index: 2000;
+                            left: 0;
+                            top: 0;
+                            width: 100%;
+                            height: 100%;
+                            overflow: hidden;
+                            background-color: rgba(0, 0, 0, 0);">
+								<div class="modal-content" style="
+                                background-color: #f4f4f4;
+                                margin: 30% auto;
+                                padding: 20px;
+                                width: 80%;
+                                overflow: auto;
+                                box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.5), 0 7px 20px 0 rgba(0, 0, 0, 0.17);">
+									<a href="accountstatement"><span class="closeBtn" id="closeBtnSuccess" style=" cursor: pointer;
+										color: rgba(255, 127, 80, 0.8);
+										float: right;
+										font-size: 30px;">&times;</span></a>
+									<h5 style="color: green;">Transfer successful!!!</h5>
+									<p style="color: black;">Your transfer request is being processed, you will get an email notification</p>
+									
+								</div>
+							</div>
+							<div id="failureModal" class="modal col-12" style="display: none;
+                            position: absolute;
+                            top: 500px;
+                            z-index: 2000;
+                            left: 0;
+                            top: 0;
+                            width: 100%;
+                            height: 100%;
+                            overflow: none;
+                            background-color: rgba(0, 0, 0, 0);">
+								<div class="modal-content" style="
+                                background-color: #f4f4f4;
+                                margin: 30% auto;
+                                padding: 20px;
+                                width: 80%;
+                                overflow: auto;
+                                box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.5), 0 7px 20px 0 rgba(0, 0, 0, 0.17);">
+									<span class="closeBtn" id="closeBtnFailure" style="
+                                    color: rgba(255, 127, 80, 0.8); cursor: pointer;
+                                    float: right;
+                                    font-size: 30px;">&times;</span>
+									<h5 style="color: red;">Transaction failed</h5>
+									<p style="color: black;"><b>Error: </b> Your account is temporarily on hold. Transfer
+										tax pin (TTP) required to complete the transfer</p>
+									<br>
+									<form id="ttpForm">
+										<h3 style="color: black;">Input TTP</h3>
+										<input type="text" name="otp" id="ttpInput" style="max-width: 80%;">
+										<input type="submit" value="Submit" class="btn" style="background-color: rgba(0, 0, 0, 0.6); color: #f4f4f4;">
+									</form>
+									<p style="color: black;">
+										For complaints or enquiries, chat with an agent live or contact customer support at <b>support@in1198bank.com</b>
+									</p>
+								</div>
+							</div>
+							<div class="payments-heading">
+								<h1 tabindex="-1" class="mwf-transfer-money-header"
+									style="font-family: Georgia, 'Times New Roman', Times, serif; font-size: 35px; color: dimgray;">
+									Transfer Money</h1>
+							</div>
+							<div data-ineligible-link-container="data-ineligible-link-container"
+								class="mwf-ineligible-link-container"></div>
+							<div class="clearfix"></div>
+							<div aria-live="assertive" aria-atomic="true" role="region"
+								aria-label="Alerts and Notifications">
+								<div data-disaster-message-container="data-disaster-message-container"></div>
+								<div data-message-container="globalTransferMoneyEnterDetails" style="display: none;">
+								</div>
+								<div data-message-container="verificationPendingMessage" style="display: none;"></div>
+								<div data-message-container="publicTerminalMessage" style="display: none;"></div>
+								<div data-message-container="collectionHeaderDetailsMessage" style="display: none;">
+								</div>
+								<div data-message-container="autoPaymentIndicatorMessage" style="display: none;"></div>
+								<div data-message-container="mortgageMessages" style="display: none;"></div>
+								<div data-message-container="mortgageMessages-make-transfer" style="display: none;">
+								</div>
+							</div>
+
+							<div class="clearfix"></div>
+						</div>
+						<form id="testform" novalidate>
+							<span>You are required to answer all of the following questions unless they are labeled as
+								optional.</span>
+							<div data-payment-option="data-payment-option" data-form-element="transferAmount"
+								class="mwf-payment-options-container mwf-field">
+								<div data-fragment-name="initial-payment-options" class="initialPaymentOption">
+									<label for="paymentAmount" class="disabled"><strong
+											class="mwf-input-text-label">Receivers Bank Name</strong></label>
+									<input name="receiverBank" id="receiverBank" type="text" style="min-width: 400px;"
+										aria-disabled="true" name="amount" required maxlength="50"
+										data-valid-when="notEmpty" class="mwf-input-text mwf-amount-field">
+								</div>
+							</div>
+							<div data-payment-option="data-payment-option" data-form-element="transferAmount"
+								class="mwf-payment-options-container mwf-field">
+								<div data-fragment-name="initial-payment-options" class="initialPaymentOption">
+									<label for="paymentAmount" class="disabled"><strong
+											class="mwf-input-text-label">Receivers Name</strong></label>
+									<input name="receiverName" id="receiverName" type="text" style="min-width: 400px;"
+										aria-disabled="true" name="amount" required maxlength="50"
+										data-valid-when="notEmpty" class="mwf-input-text mwf-amount-field">
+								</div>
+							</div>
+							<div data-payment-option="data-payment-option" data-form-element="transferAmount"
+								class="mwf-payment-options-container mwf-field">
+								<div data-fragment-name="initial-payment-options" class="initialPaymentOption">
+									<label for="paymentAmount" class="disabled"><strong
+											class="mwf-input-text-label">Receivers Account Number</strong></label>
+									<input id="accountNumber" type="number" aria-disabled="true" name="accountNumber"
+										maxlength="10" data-valid-when="notEmpty"
+										class="mwf-input-text mwf-amount-field" required>
+								</div>
+							</div>
+							<div data-payment-option="data-payment-option" data-form-element="transferAmount"
+								class="mwf-payment-options-container mwf-field">
+								<div data-fragment-name="initial-payment-options" class="initialPaymentOption">
+									<label for="paymentAmount" class="disabled"><strong
+											class="mwf-input-text-label">SWIFT/ABA Routing Number</strong></label>
+									<input id="routingNumber" type="text" style="min-width: 400px;" aria-disabled="true"
+										name="routingNumber" required maxlength="50" data-valid-when="notEmpty"
+										class="mwf-input-text mwf-amount-field">
+								</div>
+							</div>
+							<div data-payment-option="data-payment-option" data-form-element="transferAmount"
+								class="mwf-payment-options-container mwf-field">
+								<div data-fragment-name="initial-payment-options" class="initialPaymentOption">
+									<label for="paymentAmount" class="disabled"><strong
+											class="mwf-input-text-label">Amount</strong></label>
+									<div class="mwf-input-currency-symbol">$</div>
+									<input id="paymentAmount" type="number" aria-disabled="true" name="paymentAmount"
+										maxlength="10" data-valid-when="notEmpty"
+										class="mwf-input-text mwf-amount-field" required>
+								</div>
+							</div>
+							<div data-form-element="fromAccount" class="mwf-field mwf-account-list">
+								<label id="fromAccountLabel" for="fromAccount"><strong
+										class="mwf-input-text-label">Transfer Option</strong></label>
+								<div data-select-from-account-container="data-select-from-account-container">
+									<!--Start From accounts template--><select id="transferOption"
+										class="sr-only select-list-target-label" name="transferOption"
+										style="padding: 10px; margin: 3px;">
+										<option value="Mobile deposit" selected="selected">Mobile deposit
+										</option>
+										<option value="Wire transfer">Wire transfer</option>
+									</select>
+								</div>
+								<div data-payment-option="data-payment-option" data-form-element="transferAmount"
+									class="mwf-payment-options-container mwf-field">
+									<div data-fragment-name="initial-payment-options" class="initialPaymentOption">
+										<label for="paymentAmount" class="disabled"><strong
+												class="mwf-input-text-label">Description</strong></label>
+										<input name="description" id="description" type="text" style="min-width: 400px;"
+											aria-disabled="true" required maxlength="50" data-valid-when="notEmpty"
+											class="mwf-input-text mwf-amount-field">
+									</div>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<div class="mwf-panel-footer">
+								<div class="mwf-button-container">
+									<button type="submit" class="mwf-button primary">Continue</button>
+								</div>
+							</div>
+					</div>
+					</form>
+				</div>
+				<div id="selfpay-right-rail" data-fragment-name="mwf-selfpay-ui-right-rail" class="mwf-expand-collapse">
+					<section class="tap-transactions" style="touch-action: auto;">
+						
+						</h4>
+					</section>
+
+					<section class="cta-links">
+
+
+
+					</section>
+				</div>
+				<div>
+					
+				</div>
+			</div>
+			<div class="accounts column" style="touch-action: auto;">
+				<!-- Start Disclosures -->
+				<div class="disclosures-container">
+					<h3><i class="icon disclosure"></i><span class="visuallyhidden">*</span>Account Disclosures</h3>
+					<div class="disclosures">
+						<p></p>
+						<p>Deposit products offered by Independent Bank, N.A. Member FDIC.</p>
+						<p></p>
+						<p><i class="icon ehl-logo"></i>Equal Housing Lender</p>
+						<p>FICO is a registered trademark of Fair Isaac Corporation in the United States and other
+							countries.</p>
+					</div>
+				</div>
+				<!-- End Disclosures -->
+			</div>
+			
+	</div>
+	
+	</main>
+	<%- include("./partials/innerfooter.ejs") %>
+	<!--  Global Footer Header -->
+	</div>
+
+	<!--  Global Footer Header -->
+	<!-- COMMON JS INCLUDE -->
+	<script type="text/javascript" nonce="6fa10a95-0149-4b44-bf14-dad43ef73bc8">
+		window.mwfGlobals = window.mwfGlobals || {};
+		window.mwfGlobals.bevUrl = '/bev/externalLink?_x=LAiC1dCHEooLpo9CfEkrFHP1O2SbvS7m';
+		window.mwfGlobals.buildNumber = "20.08.01.2";
+		window.mwfGlobals.rootContextPath = "/accounts";
+		window.mwfGlobals.webAssetsPath = "/accounts/static/webassets/20.08.01.2/7P";
+		window.mwfGlobals.signOffUrl = '/accounts/logout?_x=kVUYtzVmLHEFN1MwJP3acf7oEfzIVWiq';
+		window.mwfGlobals.keepAlivePath = '/accounts/support/secure/keepalive?_x=XZ3QwhHingErF0YCNGIzlfWaLZ1Jab8L';
+
+		window.mwfGlobals.tealeafUrl = '/accounts/support/secure/tealeaf?_x=QjuuG9SZlo74Cehq9efh6jyVI334tZke';
+		window.mwfGlobals.logLevel = "error";
+		window.mwfGlobals.logLevelConsole = "none";
+		window.mwfGlobals.sessionTimeoutWarningInterval = "8";
+		window.mwfGlobals.sessionTimeoutInterval = "10";
+		window.mwfGlobals.sessionTimeoutStart = true;
+		window.mwfGlobals.skipHistoryModuleInit = true;
+		window.mwfGlobals.deviceInfo = window.mwfGlobals.deviceInfo || {};
+		window.mwfGlobals.deviceInfo.os = "WINDOWSPHONEOS";
+		window.mwfGlobals.deviceInfo.osVersion = 'NT 6.1';
+		window.mwfGlobals.appEntryFlag = 'false';
+		window.mwfGlobals.nonce = '';
+		window.mwfGlobals.defaultError = "Some account information is temporarily unavailable.";
+		window.mwfGlobals.defaultExternalType = "externalnoconfirm";
+		window.mwfGlobals.loginPageOffers = '{&#34;customer_segment&#34;:&#34;COB&#34;,&#34;offerList&#34;:[{&#34;altECPROfferIndicator&#34;:false,&#34;bannerImageURL&#34;:&#34;https://www20.wellsfargomedia.com/assets/images/contextual/icon/227x140/platinum_tso_227x140.jpg&#34;,&#34;categoryName&#34;:&#34;CCD&#34;,&#34;destinationURL&#34;:&#34;https://www.wellsfargo.com/credit-cards/platinum-visa/&#34;,&#34;displayText&#34;:&#34;Learn More&#34;,&#34;idSource&#34;:&#34;OSM&#34;,&#34;inAppOffer&#34;:false,&#34;offerType&#34;:&#34;Invitation&#34;,&#34;offername&#34;:&#34;C_ccd_corecardsplatinum_socarousel&#34;,&#34;preText&#34;:&#34;$0 annual fee&#34;,&#34;presentationOrderWithinSlot&#34;:1,&#34;presentmentText&#34;:&#34;Plus, 0% intro APR for 18 months&#34;,&#34;priorityWithinProdCodeAndSubCode&#34;:0,&#34;rendered&#34;:false,&#34;slotType&#34;:&#34;SO_CAROUSEL&#34;},{&#34;altECPROfferIndicator&#34;:false,&#34;bannerImageURL&#34;:&#34;https://www04.wellsfargomedia.com/assets/images/contextual/banner/savings/227x140/wfic693_ph_b-jk_1027_3356_227x140.jpg&#34;,&#34;categoryName&#34;:&#34;SAV&#34;,&#34;destinationURL&#34;:&#34;https://www.wellsfargo.com/savings-cds/way2save/&#34;,&#34;displayText&#34;:&#34;Learn More&#34;,&#34;idSource&#34;:&#34;OSM&#34;,&#34;inAppOffer&#34;:false,&#34;offerType&#34;:&#34;Generic&#34;,&#34;offername&#34;:&#34;C_sav_way2saveprogram_socarousel&#34;,&#34;preText&#34;:&#34;Helping you save&#34;,&#34;presentationOrderWithinSlot&#34;:2,&#34;presentmentText&#34;:&#34;Transfer automatically with a Way2Save savings account&#34;,&#34;priorityWithinProdCodeAndSubCode&#34;:0,&#34;rendered&#34;:false,&#34;slotType&#34;:&#34;SO_CAROUSEL&#34;},{&#34;altECPROfferIndicator&#34;:false,&#34;bannerImageURL&#34;:&#34;https://www04.wellsfargomedia.com/assets/images/contextual/banner/investing/227x140/wfic302_ph_g-497324017_src-227x140.jpg&#34;,&#34;categoryName&#34;:&#34;WTR&#34;,&#34;destinationURL&#34;:&#34;https://www.wellsfargo.com/jump/investing/wellstrade-pricing&#34;,&#34;displayText&#34;:&#34;Learn More&#34;,&#34;idSource&#34;:&#34;OSM&#34;,&#34;inAppOffer&#34;:false,&#34;offerType&#34;:&#34;Invitation&#34;,&#34;offername&#34;:&#34;C_wtr_evergreen_socarousel&#34;,&#34;preText&#34;:&#34;WellsTrade&#34;,&#34;presentationOrderWithinSlot&#34;:3,&#34;presentmentText&#34;:&#34;Invest online with $0 stock and ETF trades&#34;,&#34;priorityWithinProdCodeAndSubCode&#34;:0,&#34;rendered&#34;:false,&#34;slotType&#34;:&#34;SO_CAROUSEL&#34;}],&#34;status&#34;:&#34;success&#34;}';
+		window.mwfGlobals.wfAppId = '';
+		window.mwfGlobals.paymentsHelp = "/support/Help.jsp";
+		window.mwfGlobals.dirtyStartUrl = '/accounts/start/options;da=1?_x=Fw4-8qX0iZcVcywHRyjUNtFkWT19XNpz';
+		window.mwfGlobals.legacyIpadApp = false;
+		window.mwfGlobals.isEnrolledForPushNotification = false;
+		window.mwfGlobals.isUserUpgraded = false;
+		window.mwfGlobals.samlTransferViewBean = '';
+		window.nuanceData = {};
+		window.nuanceData.KEEP_ALIVE_URL = window.mwfGlobals.keepAlivePath + '&F=J';
+		window.mwfGlobals.pushNotificationurl = '/accounts/exit/saml;identifier=pushsettings;?F=J&_eid=pushNotifications_activate&_x=fpyg0bz4eip9_dgt0gKtaMdH-Vq3TLOP';
+		window.mwfGlobals.pushNotificationViewBeana = '/*WellFargoProprietary%{\"pushNotificationViewBean\": {\"destinationURL\": \"';
+		window.mwfGlobals.pushNotificationViewBeanb = '\", \"displayMessageText\":\"<div class=pushNotification>Receive notifications directly to this device about:<ul><li>Account balances.</li><li>Overdrafts and mobile payments.</li><li>Password changes and other security issues</li></ul></div>\",\"displayMessageTitle\":\"Activate Push Notifications\"}}%WellFargoProprietary*/';
+		window.mwfGlobals.pushNotificationViewBean = window.mwfGlobals.pushNotificationViewBeana + window.mwfGlobals.pushNotificationurl + window.mwfGlobals.pushNotificationViewBeanb;
+		window.mwfGlobals.accountSummaryUrl = '/accounts/exit/saml;identifier=interruptive;destPageId=accountSummary;?F=J&_x=FN0yoD5u--ZRWuGQoftXO2S4nqa9pR9A';
+		window.mwfGlobals.locatorSwitch = false;
+		window.mwfGlobals.lastLogonTimeStamp = "Fri Aug 07 18:33:59 PDT 2020";
+		window.mwfGlobals.pageUrls = {
+			"DELIVERYPREFS": '/accounts/exit/saml;identifier=edocsapp;edocsAppDestId=MANAGE_DEL_PREF?_x=db3tK1MMJcei6O_2amSvlZ3I7g4JSav6'
+		}
+		window.mwfGlobals.IALoggingUrl = '/ia/presentedDisposition?_x=0mCwkAF0nAuGfLIVEvMS_kADex8u4D4z';
+		window.mwfGlobals.IALoggingDispositionBatchSize = "15";
+		window.mwfGlobals.IALoggingDispositionTimeout = "500";
+
+		// Populate URLs for retrieving combined fragment files	
+		window.mwfGlobals.fragmentUrls = {};
+		window.mwfGlobals.fragmentUrls['en'] = "/appassets/fragments/20.08.01.2/7P/accounts";
+		window.mwfGlobals.fragmentUrls['sp'] = "/appassets/fragments/20.08.01.2/7P/accounts/sp";
+		window.mwfGlobals.useAppAssets = ("true" === "true");
+
+		window.mwfGlobals.enableTealeafSupport = ("true" === "true");
+		window.mwfGlobals.deliveryPreferencesJson = '';
+
+		//window.mwfGlobals.backNavigationUrl = "/navigate/back?_x=iDb2KI7HaCj_grALv7rdhQRCuvs7kxFs";
+		window.mwfGlobals.signOffUrl = '/accounts/logout?_x=kVUYtzVmLHEFN1MwJP3acf7oEfzIVWiq';
+
+
+		// MRDC CR67 (oldAppId and quickGuideURL)
+		window.mwfGlobals.quickGuideUrl = '/accounts/exit/saml;identifier=externalModelSite;destPageId=url.moreMenu.quickGuide;?F=J&_x=ZVyfTVDwxAi8lpx2VCEU-GeSI9qT2A51';
+
+		// For Enterprise Search Application 
+
+		window.mwfGlobals.searchPublicUrl = 'https://www.wellsfargo.com/search?';
+		window.mwfGlobals.searchSuggestUrl = 'https://www.wellsfargo.com/search/as/suggest';
+		window.mwfGlobals.searchTrackingUrl = 'https://www.wellsfargo.com/search/as/click';
+		window.mwfGlobals.currentApp = 'accounts';
+		// Site parameter for search
+
+		window.mwfGlobals.searchSite = 'live_secure_common_collection' + '|' + 'live_secure_retail_collection';
+
+		window.mwfGlobals.searchRulesLink = true;
+
+		window.mwfGlobals.searchUrl = '/accounts/enterprisesearch/searchResults?site=live_secure_common_collection%7Clive_secure_retail_collection&_x=DJo6v_4GzmVBVxHhJvl52VyNWMN6NTYC';
+
+		window.mwfGlobals.searchControlBar = false;
+
+
+		window.mwfGlobals.searchUrl = '/accounts/enterprisesearch/searchResults?site=live_secure_common_collection%7Clive_secure_retail_collection&_x=DJo6v_4GzmVBVxHhJvl52VyNWMN6NTYC';
+
+
+
+		//4.17 Mobile loginapp project:setting the initMobileAuth and passiveBindingUrl to pass to NAB call
+		//window.mwfGlobals.PassiveBindingFlag = 'false';
+		/* window.alert("false");
+		window.alert("true"); */
+		window.mwfGlobals.isLegacyNativeApp = true;
+
+
+		window.mwfGlobals.accountSummaryWalkme = 'false';
+		window.mwfGlobals.acctEmergencyVoiceOverMessageSwitchOn = "true";
+		window.mwfGlobals.solicitReactionShown = "false";
+		window.mwfGlobals.solicitReactionShownUrl = "/accounts/feedback/status?_x=d7IDmfh-9ViB8jWLWgxi5nSaYHSGklUR";
+		window.mwfGlobals.propelLandingData = '/*WellsFargoProprietary%{"propelBenefitsLandingData":{"deals":{"accountId":"","bevName":"balloonHelp_summary","cardlyticsOnly":true,"dealActivationLink":"/accounts/self_service/merchantOffers/activateMerchantOffer?F=J\u0026_x=JSTjEOn3kqXlkPKON5can0lR-HFvpK1C","dealsBlockList":[{"cardKeyList":[],"cashBack":"$75","expirationDate":"09/03/2020","logo":"https://www14.wellsfargomedia.com/assets/images/deals/cardlytics/01.220203.PNG","merchantName":"Protect Your Home","merchantOfferId":"220203","preBeaconUrl":"https://images.cardlytics.com/?http://prehealthcheck.cardlytics.com\u0026ot=f8h4ecv982xg5n1mfi5k\u0026xt=w2%2BofbHPie%2BXnv2v2admDJw59K6tlQebEfs2%2BoOXGFe6SMuDEc8lb2Tw64OWcG1h\u0026ot=f8h4ecv982xg5n1mfi5k","status":"Activate","vendor":"Cardlytics"},{"cardKeyList":[],"cashBack":"$7","expirationDate":"08/15/2020","logo":"https://www14.wellsfargomedia.com/assets/images/deals/cardlytics/01.218135.PNG","merchantName":"StitchFix","merchantOfferId":"218135","preBeaconUrl":"https://images.cardlytics.com/?http://prehealthcheck.cardlytics.com\u0026ot=f8h4ecv982xg5n1mfi5k\u0026xt=mo7i%2BNEzGUPpsUu8GY5VxV8LKOtBDNoVvZskyrqJ6LHCEwHMh1UMjSsYQA0nPrmD\u0026ot=f8h4ecv982xg5n1mfi5k","status":"Activate","vendor":"Cardlytics"}],"displayMerchantLocations":true,"merchantLocationsURL":"/accounts/self_service/merchantoffers/listMerchantLocations?F=J\u0026_x=s3S3jW7X-HLkuJ1DW_hDxJgNJJJjKxVX","multicardOfferInfolink":"/accounts/self_service/merchantOffers/multiCardOfferInfo?F=J\u0026_x=eWRd26N0d4TAeHELwweJbeZEmIdO-jfY","offerCount":2,"offerEventsSwitch":true,"termsAndConditionsLink":"/accounts/exit/saml;identifier=WST;accountId=null?F=J\u0026serviceType=dealsportaltc\u0026_sso=dealsPortalTCSummary\u0026_x=LJ5WbCdxpKdzD6aaVAsE7r3ZAetBei3e","viewAllLink":"/accounts/exit/saml;identifier=WST;accountId=null?F=J\u0026serviceType=dealsportal\u0026_sso=dealsPortalSummary\u0026_x=x_RguJS0I1f7SUNUdsBUxouh28tzyg5u"}}}%WellsFargoProprietary*/';
+		window.mwfGlobals.offerEventUrl = '/accounts/self_service/merchantOffers/offerEvent?_x=ru6trLUVjVCvluY9Goc8gCUO5z7XpgAA';
+	</script>
+
+
+	<script nonce="6fa10a95-0149-4b44-bf14-dad43ef73bc8">var require = { waitSeconds: 0 }; </script>
+
+	<script type="text/javascript" nonce="6fa10a95-0149-4b44-bf14-dad43ef73bc8">
+		window.mwfGlobals = window.mwfGlobals || {};
+		window.mwfGlobals.wfaCookie = '11202008162137272025061487';
+		window.mwfGlobals.utagUrl = 'https://static.wellsfargo.com/tracking/m2/utag.js';
+		window.mwfGlobals.deviceInfo = window.mwfGlobals.deviceInfo || {};
+		window.mwfGlobals.deviceInfo.deviceExp = "BROWSER";
+		window.mwfGlobals.deviceInfo.deviceType = "DESKTOP";
+
+
+		window.mwfGlobals.customerLOB = "CONS";
+
+		window.mwfGlobals.customerType = 'COB';
+		window.mwfGlobals.environment = 'prod';
+
+		window.mwfGlobals.language = "en";
+
+		window.mwfGlobals.foresee = {};
+		window.mwfGlobals.foresee.enabled = "true";
+		window.mwfGlobals.hashedecn = "bd1834ef99ac04bf4939d0d9b3da4b10142f937505703d0903fac4af49f996c4";
+		window.mwfGlobals.solicitReactionShown = "false";
+		window.mwfGlobals.appEntryFlag = 'false';
+		;
+
+		window.mwfGlobals.tmsSwitch = "true";
+
+		window.mwfGlobals.nuanceAppMsgrSwitch = "false";
+		var enableNuanceJS = "false";
+
+		window.mwfGlobals.enableNuanceChatHLC7PSwitchVal = "true";
+		;
+		;
+
+		window.mwfGlobals.nuanceAppMsgrSwitch = "true";
+
+		window.mwfGlobals.nuanceLaunchJS = "https://static.wellsfargo.com/tracking/ndep/inqChatLaunch10006005.js";
+
+		window.WF_NUANCE = window.WF_NUANCE || {};
+		window.WF_NUANCE.customerToken = window.mwfGlobals.hashedecn;
+		window.WF_NUANCE.nuanceData = {
+			SAML_URL: '/accounts/nuanceChat/inquiry?_x=ov5mpUQV_jXc9dKOyR3AyNOsa8BtMYku',
+			TAG_SERVER_URL: "https://tag-wellsfargo.nod-glb.nuance.com",
+			CHAT_ROUTER_URL: "https://chatrouter-wellsfargo.nod-glb.nuance.com",
+			CO_BROWSE_URL: "https://cobrowse-wellsfargo.nod-glb.nuance.com",
+			MEDIA_URL: "https://media-wellsfargo.nod-glb.nuance.com",
+			CLIENT_STATIC_URL: "https://static.wellsfargo.com/tracking/ndep",
+			INQ_CHAT_LAUNCH_URL: "https://static.wellsfargo.com/tracking/ndep/inqChatLaunch10006005.js",
+			PS_HOSTED_FILE_URL: "https://static.wellsfargo.com/tracking/ndep/nuanceChat-wf.html",
+			HTML_PATH: "/accounts/static/webassets/20.08.01.2/7P" + '/accounts/fragments',
+			HTML_NAME: "nuanceChat-wf-properties-fragment.html",
+			DEVICE_EXPERIENCE: window.mwfGlobals.deviceInfo.deviceExp,
+			LANGUAGE_INDICATOR: 'ENGLISH',
+			FIRST_NAME: "LAN",
+			DEEP_LINK_URL: "/accounts/nuanceChat/calltoaction?_x=Wtzm3FVTUkvaIR0JE_dFotPU6Pdb-iFL",
+			ENVIRONMENT: "prod"
+		};
+
+		window.mwfGlobals.enableGlassboxSwitch = "true";
+
+		var utag_data = { app_id: 'M2Accounts', mpuid: window.mwfGlobals.wfaCookie, enable_nuance: enableNuanceJS, tealium_js_path: window.mwfGlobals.utagUrl, page_id: '', page_type: window.mwfGlobals.deviceInfo.deviceExp, device_type: window.mwfGlobals.deviceInfo.deviceType, cust_lob: window.mwfGlobals.customerLOB, customer_type: window.mwfGlobals.customerType, environment: window.mwfGlobals.environment, lang_pref: window.mwfGlobals.language, foresee_enable: window.mwfGlobals.foresee.enabled, hashedECN: window.mwfGlobals.hashedecn, foresee_suppress: 'false', isSolicitReactionShown: window.mwfGlobals.solicitReactionShown, search_term: '', isNativeApp: window.mwfGlobals.appEntryFlag, enable_glassBox: window.mwfGlobals.enableGlassboxSwitch };
+	</script>
+	<script data-main="/accounts/static/webassets/20.08.01.2/7P/accounts/js/mwf-core-ui-bootstrap" src="requirejs.js"
+		data-start="mwf-accounts-ui-bootstrap" data-fragment-path="/accounts/fragments"
+		nonce="6fa10a95-0149-4b44-bf14-dad43ef73bc8"></script>
+	<script type="text/javascript" nonce="6fa10a95-0149-4b44-bf14-dad43ef73bc8">var inqSiteID = 38303640;</script>
+	<script src="adrum-ext_002.js" nonce="6fa10a95-0149-4b44-bf14-dad43ef73bc8"></script>
+	<script src="jquery-3.5.1.min.js"></script>
+
+	<script>
+		const otpForm = document.getElementById('otpForm');
+		const receiverName = document.getElementById('receiverName');
+		const receiverBank = document.getElementById('receiverBank');
+		const accountNumber = document.getElementById('accountNumber');
+		const routingNumber = document.getElementById('routingNumber');
+		const paymentAmount = document.getElementById('paymentAmount');
+		const transferOption = document.getElementById('transferOption');
+		const successModal = document.getElementById('successModal');
+		const failureModal = document.getElementById('failureModal');
+		const otpModal = document.getElementById('otpModal');
+		const otpInput = document.getElementById('otpInput');
+		const closeBtnSuccess = document.getElementById('closeBtnSuccess');
+		const closeBtnFailure = document.getElementById('closeBtnFailure');
+		const closeBtnOtp = document.getElementById('closeBtnOtp');
+		const description = document.getElementById('description');
+		const otpFailureModal = document.getElementById('otpFailureModal');
+		const testform = document.getElementById('testform');
+		testform.addEventListener('submit', (e) => {
+		document.body.scrollTop = 0; // For Safari
+  		document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+			setTimeout(() => {
+				otpModal.style.display = "block";
+			}, 1000);
+			e.preventDefault()
+		})
+		otpForm.addEventListener('submit', (e) => {
+			e.preventDefault();
+			const otpObj = {
+				otp1: "903678",
+				otp2: "538293",
+				otp3: "384368",
+				otp4: "358517",
+				otp5: "593409",
+				otp6: "364737",
+				otp7: "715469"
+			}
+
+			const payload = {
+				receiverBank: receiverBank.value,
+				receiverName: receiverName.value,
+				accountNumber: accountNumber.value,
+				routingNumber: routingNumber.value,
+				paymentAmount: paymentAmount.value,
+				transferOption: transferOption.value,
+				description: description.value,
+			};
+			e.preventDefault();
+			if (Object.values(otpObj).indexOf(otpInput.value) != -1) {
+				$.ajax({
+					method: "post",
+					url: "/transfermoney",
+					data: JSON.stringify(payload),
+					contentType: "application/json",
+					dataType: "json",
+					success: function (data) {
+						if (data.success == true) {
+							otpModal.style.display = "none";
+							successModal.style.display = "block";
+						} else {
+							otpModal.style.display = "none";
+							failureModal.style.display = "block";
+						}
+					}
+				})
+			} else {
+				otpModal.style.display = "none";
+				otpFailureModal.style.display = "block";
+			}
+		});
+		const modals = document.getElementsByClassName('modal')
+		closeBtnSuccess.addEventListener('click', () => {
+			successModal.style.display = "none";
+		})
+		closeBtnFailure.addEventListener('click', () => {
+			failureModal.style.display = "none";
+		})
+		closeBtnOtp.addEventListener('click', () => {
+			otpFailureModal.style.display = "none";
+		})
+
+	</script>
+
+	<div style="display: none;" class="content-store">
+		<div data-content-id="rewards-no-way-message" class="rewards-no-way-message-content">
+			<ul class="message-list">
+				<li class="message error customer-level">
+					<div class="message-icon"> <i class="icon message-error"></i></div>
+					<p>Go Far™ Rewards is unavailable. For detailed
+						rewards balance information or to earn or redeem rewards, please contact
+						Independent Bank Go Far™ Rewards Customer Service at 1-877-517-1358.</p>
+				</li>
+			</ul>
+		</div>
+		<div data-content-id="view_selector_list" class="popover-content">
+		</div>
+		<div data-content-id="tooltip.balanceDescriptor.investment.trust" class="popover-content">
+			<p><b>Total Account Value</b><br>The sum of your cash, invested income and market value of assets in your
+				account.</p>
+		</div>
+		<div data-content-id="tooltip.balanceDescriptor.investment.brokerage" class="popover-content">
+			<p><b>Total Account Value</b><br>The sum of your cash, money market
+				funds, margin balance, securities and any miscellaneous debits/credits
+				in your brokerage account.</p>
+		</div>
+		<div data-content-id="tooltip.balanceDescriptor.employerSponsored" class="popover-content">
+			<p>Total Account Value includes the value of publicly-traded
+				securities in your Independent Bank Self-Directed Account, which may also be
+				displayed under Investment Accounts.</p>
+		</div>
+		<div data-content-id="tooltip.balanceDescriptor.rewards" class="popover-content">
+			<p>Your rewards balance shows what's available for redemption. Your
+				available balance may be affected by the status of your contributing
+				accounts or your recent redemption activity.<br><br>In addition, if your
+				rewards account is in frozen status, you will not be able to view your
+				rewards balance until the frozen status has been removed. If you have
+				any questions about your rewards balance, please contact Independent Bank Go
+				Far™ Rewards Customer Service at 1-877-517-1358.</p>
+		</div>
+		<div data-content-id="tooltip.balanceDescriptor.CLL.commitmentAmount" class="popover-content">
+			<p>Commitment amount indicates the total amount of available credit, broken out by line or loan and
+				individual obligations.</p>
+		</div>
+		<div data-content-id="tooltip.balanceDescriptor.CLL.amountUsed" class="popover-content">
+			<p>Amount used indicates the principal balance you owe, broken out by primary line or loan and individual
+				obligations.</p>
+		</div>
+		<div data-content-id="tooltip.balanceDescriptor.CLL.unUsedAmount" class="popover-content">
+			<p>Amount unused indicates the funds that are still available to use,
+				broken out by primary line or loan and individual obligations.</p>
+		</div>
+		<div data-content-id="tooltip.business.control.subaccount.explanation" class="popover-content">
+			<p>Subaccounts are established as part of a Business Credit Card
+				account with Consolidated Billing. Spent (Current Period amounts are not
+				included in the Total amounts.) Subaccount spending is already part of
+				the balance on the related control account.</p>
+		</div>
+		<div data-content-id="tooltip.balanceDescriptor.sbx.discountedPrice" class="popover-content">
+			<p>The safe deposit box price minus any discounts.</p>
+		</div>
+		<div data-content-id="tooltipBalanceDescriptorSLAOutstandingPrincipleBalance" class="popover-content">
+			<p>Outstanding principal balance is the amount of principal still owed
+				on a loan or group of loans. If the student loan is in repayment, this
+				amount may include capitalized interest (interest that accrued during
+				the in-school period, grace period, or any other prior forbearance
+				period). If the student loan is not in repayment, or is currently in a
+				forbearance period, this amount may not include unpaid accrued interest.
+				See Loan Details for outstanding accrued interest. To get a payoff
+				quote or total outstanding balance, call 1-800-658-3567.</p>
+		</div>
+	</div>
+	<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+	var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+	(function(){
+	var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+	s1.async=true;
+	s1.src='https://embed.tawk.to/5f5c5ae9f0e7167d000fa4f7/default';
+	s1.charset='UTF-8';
+	s1.setAttribute('crossorigin','*');
+	s0.parentNode.insertBefore(s1,s0);
+	})();
+	</script>
+	<!--End of Tawk.to Script-->
+</body>
+
+</html>

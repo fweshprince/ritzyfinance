@@ -1,0 +1,205 @@
+@font-face {
+  font-family: 'indbank';
+  src:
+    url('indbankfeca.woff2?9tflly') format('woff2'),
+    url('indbankfeca.ttf?9tflly') format('truetype'),
+    url('indbankfeca.woff?9tflly') format('woff'),
+    url('indbankfeca.svg?9tflly#indbank') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+i, .icomoon-liga {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'indbank' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  
+  /* Enable Ligatures ================ */
+  letter-spacing: 0;
+  -webkit-font-feature-settings: "liga";
+  -moz-font-feature-settings: "liga=1";
+  -moz-font-feature-settings: "liga";
+  -ms-font-feature-settings: "liga" 1;
+  font-feature-settings: "liga";
+  -webkit-font-variant-ligatures: discretionary-ligatures;
+  font-variant-ligatures: discretionary-ligatures;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.indbank-envelope:before {
+  content: "\e922";
+}
+.indbank-linkedin-square:before {
+  content: "\e923";
+}
+.indbank-youtube-play:before {
+  content: "\e924";
+}
+.indbank-instagram:before {
+  content: "\e925";
+}
+.indbank-twitter:before {
+  content: "\e926";
+}
+.indbank-facebook-official:before {
+  content: "\e927";
+}
+.indbank-lock:before {
+  content: "\f023";
+}
+.indbank-money:before {
+  content: "\f0d6";
+}
+.indbank-zero-dollar:before {
+  content: "\e999";
+}
+.indbank-line-chart:before {
+  content: "\f201";
+}
+.indbank-handshake-o:before {
+  content: "\f2b5";
+}
+.indbank-phone:before {
+  content: "\f095";
+}
+.indbank-check:before {
+  content: "\f00c";
+}
+.indbank-close:before {
+  content: "\f00d";
+}
+.indbank-remove:before {
+  content: "\f00d";
+}
+.indbank-times:before {
+  content: "\f00d";
+}
+.indbank-circle-o:before {
+  content: "\f10c";
+}
+.indbank-circle:before {
+  content: "\f111";
+}
+.indbank-section-bug:before {
+  content: "\e900";
+}
+.indbank-diamond-o:before {
+  content: "\f10d";
+}
+.indbank-diamond:before {
+  content: "\f112";
+}
+.indbank-asterisk:before {
+  content: "\f069";
+}
+.indbank-bank-to-bank:before {
+  content: "\e908";
+}
+.indbank-bank-dollar-sign:before {
+  content: "\e909";
+}
+.indbank-bank:before {
+  content: "\e90a";
+}
+.indbank-bar-chart:before {
+  content: "\e90b";
+}
+.indbank-check-with-mark:before {
+  content: "\e90c";
+}
+.indbank-checkmark-shield:before {
+  content: "\e90d";
+}
+.indbank-coffee-cup:before {
+  content: "\e90e";
+}
+.indbank-credit-card:before {
+  content: "\e90f";
+}
+.indbank-document-tax:before {
+  content: "\e910";
+}
+.indbank-document:before {
+  content: "\e911";
+}
+.indbank-envelope1:before {
+  content: "\e912";
+}
+.indbank-gas-pump:before {
+  content: "\e913";
+}
+.indbank-info:before {
+  content: "\e914";
+}
+.indbank-laptop:before {
+  content: "\e915";
+}
+.indbank-lockbox:before {
+  content: "\e916";
+}
+.indbank-phone-text:before {
+  content: "\e917";
+}
+.indbank-piggy-bank:before {
+  content: "\e918";
+}
+.indbank-up-arrow-cents:before {
+  content: "\e919";
+}
+.indbank-up-arrow:before {
+  content: "\e91a";
+}
+.indbank-coins:before {
+  content: "\e91b";
+}
+.indbank-hand-coin:before {
+  content: "\e91c";
+}
+.indbank-money-bag:before {
+  content: "\e91d";
+}
+.indbank-padlock:before {
+  content: "\e91e";
+}
+.indbank-phone-secure:before {
+  content: "\e91f";
+}
+.indbank-phone-old:before {
+  content: "\e920";
+}
+.indbank-tickets:before {
+  content: "\e921";
+}
+.indbank-icon-single-line-envelope:before {
+  content: "\e902";
+}
+.indbank-icon-single-line-laptop:before {
+  content: "\e903";
+}
+.indbank-icon-single-line-paper:before {
+  content: "\e904";
+}
+.indbank-icon-single-line-bank:before {
+  content: "\e905";
+}
+.indbank-logotype:before {
+  content: "\e906";
+}
+.indbank-logo:before {
+  content: "\f00e";
+}
+.indbank-member-fdic:before {
+  content: "\e907";
+}
+.indbank-equal-housing-lender:before {
+  content: "\e901";
+}
