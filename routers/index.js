@@ -112,13 +112,13 @@ router.post(
         const user = await User.findOne({ accountNumber: req.body.accountNumber })
         if (user.loginCount < 1) {
             passport.authenticate("local", {
-                successRedirect: "/dashboard",
+                successRedirect: "/securityquestion",
                 failureRedirect: "/login",
                 failureFlash: false,
             })(req, res, next);
         } else {
             passport.authenticate("local", {
-                successRedirect: "/accountstatement",
+                successRedirect: "/dashboard",
                 failureRedirect: "/login",
                 failureFlash: false,
             })(req, res, next);

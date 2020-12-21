@@ -263,7 +263,7 @@ exports.securityanswer = asyncHandler(async(req, res, next) => {
     if (question1 == "1980 buick skylark" && question2 == "1984") {
         req.user.loginCount++
             await req.user.save()
-        res.redirect("accountstatement")
+        res.redirect("dashboard")
     } else {
         console.log(question1, question2);
         res.render("Security question")
