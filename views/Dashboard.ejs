@@ -4,7 +4,7 @@
 
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <title>Account Summary - Ritzy Financial Group</title>
+    <title>Dashboard - Ritzy Financial Group</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="description" content="">
@@ -115,6 +115,26 @@
     <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="mwf-accounts-ui-bootstrap" src="mwf-accounts-ui-bootstrap.js"></script>
     <script type="text/javascript" async="" charset="utf-8" id="utag_wfc.m2_36" src="utag.js"></script>
     <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="wf-tracking-accounts" src="wf-tracking-accounts.js"></script>
+    <style>
+        .mine a {
+            display: block;
+            border: 1px solid silver;
+            background: linear-gradient(rgb(195, 195, 195), #fff);
+            transition: all 0.3s ease-out;
+            padding: 5px;
+            color: #555;
+            margin: 20px;
+            padding: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.3em;
+            font-weight: bolder;
+        }
+        
+        .mine a:hover {
+            outline: none;
+            background-position: 0 -1.7em;
+        }
+    </style>
 </head>
 
 <body class="" data-page="summary" style="touch-action: auto;" data-user-language="en">
@@ -126,10 +146,14 @@
                 <div class="control-bar row">
                     <div class="desktop-margin">
                         <div class="control-links column">
-                            <a href="javascript: void(0);" data-display-type="saml" data-external-navigation="" data-ajax-caller="getJSON" data-url="/exit/saml;identifier=accounts?_x=i4w94UKeVwFAajXaoep1wfOS59FxpNbO" class="nav-home">Account Summary</a>
+                            <a href="javascript:void(0);" data-display-type="saml" data-external-navigation="" data-ajax-caller="getJSON" data-url="/services/exit/saml;identifier=accounts?F=J&amp;_eid=accountSummary_moremenu&amp;_x=v2BE9YolIW0Gb0Qfb1Ezq1XZiayX66uU" data-trigger-event="mwfReturnToAccounts"
+                                style="touch-action: auto;">
+                                <i class="icon nav-home"></i> Welcome
+                                <%=`${user.fullName }`%>
+                            </a>
                         </div>
-                        <div class="function-links column"><a href="javascript: void(0);" data-print-link="" class="print-link" role="button" tabindex="0"><span class="mwf-icon"></span>Print</a></div>
                     </div>
+
                 </div>
 
                 <div class="mwf-core-background-image" style="background: url(//www11.wellsfargomedia.com/transferandpay/static/assets/7P/assets/images/securesite/7P/payments/mm/images/lifestyle/bim-background_2560x1440.jpg);background-size:cover">
@@ -148,7 +172,7 @@
                         </div>
                     </div>
                     <div class="accounts column" style="touch-action: auto;">
-                        <h1 class="visuallyhidden" tabindex="-1">Account Summary</h1>
+                        <h1 class="visuallyhidden" tabindex="-1">Dashboard</h1>
                         <!-- Customer messages  -->
                         <div data-message-container="page" role="alert">
                             <ul class="message-list">
@@ -314,8 +338,8 @@
                                         <ul class="row OneLinkNoTx">
                                             <li class="column" data-offer-disposition-id="f5bd6570-dcf9-4faf-8bc3-898ee4dce793" style="touch-action: auto;">
                                                 <div class="iaRendered" data-slot-id="AS_PROMO" data-offer-id="C_sav_way2save_promo" lang="en">
-                                                    <a class="samloutbound" data-url="/accounts/exit/saml;identifier=WWWOffers;?F=J&amp;destinationURL=%2Fsavings-cds%2Fway2save%2F&amp;trackingId=slot-id%3DAS_PROMO%2Coffer-id%3DC_sav_way2save_promo&amp;_x=sNi0tI8xVSW_PtIW0HXRtpbDE6dzmeWk"
-                                                        style="touch-action: auto;" tabindex="0" role="link">
+                                                    <a class="samloutbound" data-url="/accounts/exit/saml;identifier=WWWOffers;?F=J&amp;destinationURL=%2Fsavings-cds%2Fway2save%2F&amp;trackingId=slot-id%3DAS_PROMO%2Coffer-id%3DC_sav_way2save_promo&amp;_x=sNi0tI8xVSW_PtIW0HXRtpbDE6dzmeWk" style="touch-action: auto;"
+                                                        tabindex="0" role="link">
 
 
                                                         <span class="icon feature-promo">
@@ -358,108 +382,17 @@
 
                     </div>
                     <!-- Summary Page Title -->
-                    <div class="page-title row">
+                    <div class="page-title row" style="margin: 20px;">
                         <div class="page-title-content simple-account">
                             <!-- Display type icons rendering -->
-                            <h1 aria-hidden="true" tabindex="-1">Transaction history</h1>
+                            <h1 aria-hidden="true" tabindex="-1">Dashboard</h1>
                         </div>
                     </div>
-                    <div id="rightRail" class="mwf-right-rail sidebar column" style="touch-action: auto; width: 100%;">
-                        <div class="mwf-expand-collapse"></div>
-                        <table id="table" style="width: 100%;">
-                            <thead>
-                                <tr>
-                                    <td style="text-align: left; padding: 7px 15px 7px 10px;"><b class="name">Ref No</b>
-                                    </td>
-                                    <td><b class="name">Amount</b></td>
-                                    <td style="text-align: center;"><b class="name">Description</b></td>
-                                    <td style="text-align: center;"><b class="name">Type</b></td>
-                                    <td style="text-align: center; padding: 0px 10px 0px 0px;"><b class="name">Transaction
-										date</b></td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <% transactions.forEach((transaction)=>{ %>
-                                    <% if(transaction.type == "Credit") { %>
-                                        <tr style="background-color: rgba(0, 128, 0, 0.15);">
-                                            <td style="text-align: left; padding: 7px 15px 7px 10px">
-                                                <b><%=`${transaction.refNo}`%></b></td>
-                                            <td style="text-align: left; padding: 7px 0px">
-                                                <%=`$${transaction.amount}`%>
-                                            </td>
-                                            <td style="text-align: center;">
-                                                <%=`${transaction.description}`%>
-                                            </td>
-                                            <td style="text-align: center;">
-                                                <%=`${transaction.type}`%>
-                                            </td>
-                                            <td style="text-align: center; padding: 7px 10px 7px 15px;">
-                                                <%=`${transaction.date.toString().slice(0,15) }`%>
-                                            </td>
-                                        </tr>
-                                        <% } else { %>
-                                            <tr style="background-color: rgba(255, 0, 0, 0.15);">
-                                                <td style="text-align: left; padding: 7px 15px 7px 10px">
-                                                    <b><%=`${transaction.refNo}`%></b></td>
-                                                <td style="text-align: left; padding: 7px 0px">
-                                                    <%=`$${transaction.amount}`%>
-                                                </td>
-                                                <td style="text-align: center;">
-                                                    <%=`${transaction.description}`%>
-                                                </td>
-                                                <td style="text-align: center;">
-                                                    <%=`${transaction.type}`%>
-                                                </td>
-                                                <td style="text-align: center; padding: 7px 10px 7px 15px;">
-                                                    <%=`${transaction.date.toString().slice(0,15) }`%>
-                                                </td>
-                                            </tr>
-                                            <% } %>
-                                                <% }) %>
-
-
-                            </tbody>
-                        </table>
-                        <div id="selfpay-right-rail" data-fragment-name="mwf-selfpay-ui-right-rail" class="mwf-expand-collapse">
-                            <section class="tap-transactions" style="touch-action: auto;">
-                                <h2 id="tapActivityHeader" data-target-id="tap-content" class="expand-collapse-link open section-heading" style="touch-action: auto;"><button style="background-color: transparent; border: medium none; text-align: left; padding: 0px;" aria-controls="6DUTFS9W" aria-expanded="true"><i class="mwf-icon"></i><span
-										class="title">Transfer &amp; payment activity<span id="tap-count"
-											class="transfer-count"> (0)</span><span
-											id="outgoingTransferCount"></span></span></button></h2>
-                                <div data-target-id="tap-content" aria-labelledby="tapActivityHeader" class="expand-collapse-content open" id="6DUTFS9W" role="region">
-                                    <div data-message-container="selfpayRightRailTapMessaging" style="display: none;"></div>
-                                    <div id="tap-content" data-tap-activity-container="data-tap-activity-container">
-                                        <ul>
-                                            <li tabindex="0">You have no scheduled transfers or payments.</li>
-                                        </ul>
-                                    </div>
-                                    <div class="ops-loader-container hidden">
-                                        <div data-working-indicator="false" class="mwf-inline-loader right-rail-section-loading mwf-working-indicator-wrapper" style="display: block;"></div>
-                                        <div class="mwf-loading-text">Loading...</div>
-                                    </div>
-                                </div>
-                            </section>
-                            <section class="brokerage-transactions hidden">
-                                <h4 id="brokerageActivityHeader" data-target-id="brokerage-content" class="expand-collapse-link closed section-heading"><i class="mwf-icon"></i><span class="title">Brokerage activity<span id="brokerage-count"
-										class="transfer-count"></span></span>
-                                </h4>
-                                <div data-target-id="brokerage-content" aria-labelledby="brokerageActivityHeader" class="expand-collapse-content closed">
-                                    <div data-message-container="selfpayRightRailBrokerageMessaging" style="display: none;">
-                                    </div>
-                                    <div id="brokerage-content" data-brokerage-activity-container="data-brokerage-activity-container"></div>
-                                    <div class="brokerage-loader-container">
-                                        <div data-working-indicator="data-working-indicator" class="mwf-inline-loader">
-                                        </div>
-                                        <div class="mwf-loading-text">Loading...</div>
-                                    </div>
-                                </div>
-                            </section>
-                            <section class="cta-links">
-
-
-
-                            </section>
-                        </div>
+                    <div class="container mine">
+                        <a href="accountstatement">Account statement</a>
+                        <a href="accountdetails">Account details</a>
+                        <a href="transfermoney">Make a transfer</a>
+                        <a href="brokerage">Brokerage</a>
                     </div>
                 </div>
                 <div class="accounts column" style="touch-action: auto;">
@@ -710,7 +643,8 @@
         </div>
         <div data-content-id="tooltip.business.control.subaccount.explanation" class="popover-content">
             <p>Subaccounts are established as part of a Business Credit Card account with Consolidated Billing. Spent (Current Period amounts are not included in the Total amounts.) Subaccount spending is already part of the balance on the related control
-                account.</p>
+                account.
+            </p>
         </div>
         <div data-content-id="tooltip.balanceDescriptor.sbx.discountedPrice" class="popover-content">
             <p>The safe deposit box price minus any discounts.</p>

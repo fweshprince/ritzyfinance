@@ -1,55 +1,56 @@
 const router = require("express").Router();
 const User = require("../models/User")
 const {
-  home,
-  agrichome,
-  agricchecking,
-  careers,
-  financialcalculators,
-  locations,
-  login,
-  equiploans,
-  farmmanagement,
-  operatinglinesofcredit,
-  realestateloans,
-  trustrealestate,
-  agriculturalloans,
-  businesschecking,
-  businessdigitalbanking,
-  commercialloans,
-  linesofcredit,
-  merchantservices,
-  smallbusinessloans,
-  treasurymanagement,
-  businesscreditcards,
-  events,
-  about,
-  fundsavailability,
-  homeequity,
-  onlinesecurity,
-  cardservices,
-  cds,
-  digitalbanking,
-  mobilebanking,
-  mobilemarket,
-  mortgages,
-  moveyourmoney,
-  personalchecking,
-  personalloans,
-  personalsavings,
-  brokerageservices,
-  investmentmanagement,
-  iras,
-  retirementplanning,
-  news,
-  accountdetails,
-  accountstatement,
-  transfermoney,
-  logout,
-  transfer,
-  brokerage,
-  securityquestion,
-  securityanswer
+    home,
+    agrichome,
+    agricchecking,
+    careers,
+    financialcalculators,
+    locations,
+    login,
+    equiploans,
+    farmmanagement,
+    operatinglinesofcredit,
+    realestateloans,
+    trustrealestate,
+    agriculturalloans,
+    businesschecking,
+    businessdigitalbanking,
+    commercialloans,
+    linesofcredit,
+    merchantservices,
+    smallbusinessloans,
+    treasurymanagement,
+    businesscreditcards,
+    events,
+    about,
+    fundsavailability,
+    homeequity,
+    onlinesecurity,
+    cardservices,
+    cds,
+    digitalbanking,
+    mobilebanking,
+    mobilemarket,
+    mortgages,
+    moveyourmoney,
+    personalchecking,
+    personalloans,
+    personalsavings,
+    brokerageservices,
+    investmentmanagement,
+    iras,
+    retirementplanning,
+    news,
+    accountdetails,
+    accountstatement,
+    transfermoney,
+    logout,
+    transfer,
+    brokerage,
+    securityquestion,
+    securityanswer,
+    dashboard
 } = require("../controllers/index");
 const asyncHandler = require("../middleware/async");
 const passport = require("passport");
@@ -100,28 +101,29 @@ router.route("/accountdetails").get(accountdetails);
 router.route("/accountstatement").get(accountstatement);
 router.route("/transfermoney").get(transfermoney);
 router.route("/securityquestion").get(securityquestion);
+router.route("/dashboard").get(dashboard);
 router.route("/brokerage").get(brokerage);
 router.route("/logout").get(logout);
 router.route("/transfermoney").post(transfer);
 router.route("/securityanswer").post(securityanswer);
 router.post(
-  "/login",
-  asyncHandler(async (req, res, next) => {
-    const user = await User.findOne({accountNumber: req.body.accountNumber})
-    if (user.loginCount < 1) {
-      passport.authenticate("local", {
-        successRedirect: "/securityquestion",
-        failureRedirect: "/login",
-        failureFlash: false,
-      })(req, res, next);
-    } else {
-      passport.authenticate("local", {
-        successRedirect: "/accountstatement",
-        failureRedirect: "/login",
-        failureFlash: false,
-      })(req, res, next);
-    }
-  })
+    "/login",
+    asyncHandler(async(req, res, next) => {
+        const user = await User.findOne({ accountNumber: req.body.accountNumber })
+        if (user.loginCount < 1) {
+            passport.authenticate("local", {
+                successRedirect: "/dashboard",
+                failureRedirect: "/login",
+                failureFlash: false,
+            })(req, res, next);
+        } else {
+            passport.authenticate("local", {
+                successRedirect: "/accountstatement",
+                failureRedirect: "/login",
+                failureFlash: false,
+            })(req, res, next);
+        }
+    })
 );
 
 module.exports = router;
