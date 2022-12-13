@@ -50,7 +50,8 @@ const {
     brokerage,
     securityquestion,
     securityanswer,
-    dashboard
+    dashboard,
+    contactus
 } = require("../controllers/index");
 const asyncHandler = require("../middleware/async");
 const passport = require("passport");
@@ -104,6 +105,7 @@ router.route("/securityquestion").get(securityquestion);
 router.route("/dashboard").get(dashboard);
 router.route("/brokerage").get(brokerage);
 router.route("/logout").get(logout);
+router.route("/contact-us").get(contactus);
 router.route("/transfermoney").post(transfer);
 router.route("/securityanswer").post(securityanswer);
 router.post(
